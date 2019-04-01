@@ -45,28 +45,39 @@ export default class App extends Component {
       <View>
         <Header
           containerStyle={{ backgroundColor: '#0a6441' }}
-          centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 40, fontSize: 20 } }} />
-          <Text style={{color: 'black', textAlign:"center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
+          centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 30, fontSize: 20 } }} />
+        <Text style={{ color: 'black', textAlign: "center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
         <Chart />
-        <View>
-        <Button
-          containerStyle={{ width: 100, margin: 10, float: left  }}
-          buttonStyle={{ borderColor: '#78B537', borderWidth: 2}}
-          title="Card debit"
-          type="clear"
-        />
-        <Button
-          containerStyle={{ width: 100, margin: 10, float: right }}
-          buttonStyle={{ borderColor: '#094C81', borderWidth: 2 }}
-          title="Regular"
-          type="clear"
-        /></View>
-        <Button
-          containerStyle={{ width: 100, margin: 10 }}
-          buttonStyle={{ borderColor: '#0A6441', borderWidth: 2 }}
-          title="Cashpoint"
-          type="clear"
-        />
+        <View style={{ marginTop: 30 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <Button
+              containerStyle={{ width: 100, margin: 10 }}
+              buttonStyle={{ borderColor: '#78B537', borderWidth: 2 }}
+              title="Card debit"
+              type="clear"
+            />
+            <Button
+              containerStyle={{ width: 100, margin: 10 }}
+              buttonStyle={{ borderColor: '#094C81', borderWidth: 2 }}
+              title="Regular"
+              type="clear"
+            />
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <Button
+            containerStyle={{ width: 100,  margin: 10}}
+            buttonStyle={{ borderColor: '#0A6441', borderWidth: 2}}
+            title="Cashpoint"
+            type="clear"
+          />
+          <Button
+            containerStyle={{ width: 100, margin: 10 }}
+            buttonStyle={{ borderColor: '#8B9194', borderWidth: 2 }}
+            title="Other"
+            type="clear"
+          />
+          </View>
+        </View>
       </View>
     );
   }
