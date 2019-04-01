@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, Header } from 'react-native-elements';
-import Chart from './chart';
+// import Chart from './chart';
 import moment from 'moment';
 import faker from 'faker';
 import { transform } from './helpers';
@@ -47,7 +47,7 @@ export default class App extends Component {
           containerStyle={{ backgroundColor: '#0a6441' }}
           centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 30, fontSize: 20 } }} />
         <Text style={{ color: 'black', textAlign: "center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
-        <Chart />
+        {/* <Chart /> */}
         <View style={{ marginTop: 30 }}>
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <Button
