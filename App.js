@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Button, ButtonGroup, Header } from 'react-native-elements';
+import Chart from './chart';
 import moment from 'moment';
 import faker from 'faker';
 import { transform } from './helpers';
@@ -35,36 +37,37 @@ export default class App extends Component {
       transactions: fakeData.transactions,
     });
   }
-  buttonList(a){
-    return(<TouchableOpacity onPress={this.handlPress}>
-      <Text style={{ border: {a}, padding: 10, textAlign:'center', color: 'black', fontSize: 24 }}>Click Me!</Text>
-      </TouchableOpacity>);
-  }
+
   render() {
     if (!this.state.transactions.length) return null;
     const transformedData = transform(this.state.transactions);
     return (
-      // <Button title="Learn More" color="black" />
-      // <ScrollView style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      //   {transformedData.map(transaction => <Text>{transaction.keyword}</Text>)}
-      // </ScrollView>
-      <View>{this.buttonList('#000000')}</View>
+      <View>
+        <Header
+          containerStyle={{ backgroundColor: '#0a6441' }}
+          centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 40, fontSize: 20 } }} />
+          <Text style={{color: 'black', textAlign:"center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
+        <Chart />
+        <View>
+        <Button
+          containerStyle={{ width: 100, margin: 10, float: left  }}
+          buttonStyle={{ borderColor: '#78B537', borderWidth: 2}}
+          title="Card debit"
+          type="clear"
+        />
+        <Button
+          containerStyle={{ width: 100, margin: 10, float: right }}
+          buttonStyle={{ borderColor: '#094C81', borderWidth: 2 }}
+          title="Regular"
+          type="clear"
+        /></View>
+        <Button
+          containerStyle={{ width: 100, margin: 10 }}
+          buttonStyle={{ borderColor: '#0A6441', borderWidth: 2 }}
+          title="Cashpoint"
+          type="clear"
+        />
+      </View>
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: 'blue',
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 12,
-    color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
-    overflow: 'hidden',
-    padding: 12,
-    textAlign:'center',
-  }
-})
