@@ -1,7 +1,7 @@
 package com.lbgrna;
 
 import android.app.Application;
-
+import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactApplication;
 import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactNativeHost;

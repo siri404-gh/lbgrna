@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.2",
+    "arty-charty": "^1.0.4",
     "faker": "^4.1.0",
     "moment": "^2.24.0",
     "react": "16.5.0",
@@ -19,7 +20,7 @@
     "react-native-elements": "^1.1.0",
     "react-native-pie": "^0.5.0",
     "react-native-pie-chart": "^1.0.13",
-    "react-native-svg": "^9.3.7",
+    "react-native-svg": "^6.0.0",
     "react-native-svg-charts": "^5.2.0",
     "react-native-vector-icons": "^6.4.2"
   },

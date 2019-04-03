@@ -5,11 +5,12 @@ import { Button, ButtonGroup, Header } from 'react-native-elements';
 import moment from 'moment';
 import faker from 'faker';
 import { transform } from './helpers';
+import { ArtySparkyPie } from 'arty-charty';
 
 export default class App extends Component {
-  state = {
-    transactions: []
-  };
+    state = {
+      transactions: []
+    };
   componentDidMount() {
     const fromDate = moment().subtract(1, 'months').startOf('month');
     const toDate = moment().endOf('month');
@@ -47,7 +48,15 @@ export default class App extends Component {
           containerStyle={{ backgroundColor: '#0a6441' }}
           centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 30, fontSize: 20 } }} />
         <Text style={{ color: 'black', textAlign: "center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
-        {/* <Chart /> */}
+        <ArtySparkyPie
+    data={{data: Array.from(Array(5)).map(() => {
+        return {
+            value: Math.random(),
+            color: `rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)})`
+        }
+    })}}
+        size={50}
+    />
         <View style={{ marginTop: 30 }}>
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <Button
