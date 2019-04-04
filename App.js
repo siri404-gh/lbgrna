@@ -46,7 +46,7 @@ export default class App extends Component {
       <View>
         <Header
           containerStyle={{ backgroundColor: '#0a6441' }}
-          centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 30, fontSize: 20 } }} />
+          centerComponent={{ text: 'Money Insights', style: { color: '#fff', height: 30, fontSize: 20 } }} />
         <Text style={{ color: 'black', textAlign: "center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
 
         <View style={{ marginTop: 30 }}>
