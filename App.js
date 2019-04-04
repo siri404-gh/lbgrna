@@ -8,9 +8,9 @@ import { transform } from './helpers';
 import { ArtySparkyPie } from 'arty-charty';
 
 export default class App extends Component {
-    state = {
-      transactions: []
-    };
+  state = {
+    transactions: []
+  };
   componentDidMount() {
     const fromDate = moment().subtract(1, 'months').startOf('month');
     const toDate = moment().endOf('month');
@@ -48,17 +48,22 @@ export default class App extends Component {
           containerStyle={{ backgroundColor: '#0a6441' }}
           centerComponent={{ text: 'Spending Insights', style: { color: '#fff', height: 30, fontSize: 20 } }} />
         <Text style={{ color: 'black', textAlign: "center", fontSize: 18, margin: 10 }}>{moment().format("MMMM YYYY")} spend</Text>
-        <ArtySparkyPie
-    data={{data: Array.from(Array(5)).map(() => {
-        return {
-            value: Math.random(),
-            color: `rgb(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)})`
-        }
-    })}}
-        size={50}
-    />
+
         <View style={{ marginTop: 30 }}>
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <ArtySparkyPie
+              data={{
+                data: Array.from(Array(5)).map(() => {
+                  return {
+                    value: Math.random(),
+                    color: `rgb(${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)})`
+                  }
+                })
+              }}
+              size={250}/>
+              </View>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20 }}>
+
             <Button
               containerStyle={{ width: 100, margin: 10 }}
               buttonStyle={{ borderColor: '#78B537', borderWidth: 2 }}
@@ -71,20 +76,20 @@ export default class App extends Component {
               title="Regular"
               type="clear"
             />
-            </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <Button
-            containerStyle={{ width: 100,  margin: 10}}
-            buttonStyle={{ borderColor: '#0A6441', borderWidth: 2}}
-            title="Cashpoint"
-            type="clear"
-          />
-          <Button
-            containerStyle={{ width: 100, margin: 10 }}
-            buttonStyle={{ borderColor: '#8B9194', borderWidth: 2 }}
-            title="Other"
-            type="clear"
-          />
+          </View>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <Button
+              containerStyle={{ width: 100, margin: 10 }}
+              buttonStyle={{ borderColor: '#0A6441', borderWidth: 2 }}
+              title="Cashpoint"
+              type="clear"
+            />
+            <Button
+              containerStyle={{ width: 100, margin: 10 }}
+              buttonStyle={{ borderColor: '#8B9194', borderWidth: 2 }}
+              title="Other"
+              type="clear"
+            />
           </View>
         </View>
       </View>
