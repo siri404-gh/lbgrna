@@ -4,15 +4,28 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output bundle.js --assets-dest assets",
+    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android": "react-native run-android",
     "test": "jest"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.2",
+    "arty-charty": "^1.0.4",
+    "faker": "^4.1.0",
+    "moment": "^2.24.0",
     "react": "16.5.0",
-    "react-native": "0.57.1"
+    "react-minimal-pie-chart": "^3.5.0",
+    "react-native": "0.57.1",
+    "react-native-circular-progress": "^1.1.0",
+    "react-native-elements": "^1.1.0",
+    "react-native-pie": "^0.5.0",
+    "react-native-pie-chart": "^1.0.13",
+    "react-native-svg": "^6.0.0",
+    "react-native-svg-charts": "^5.2.0",
+    "react-native-vector-icons": "^6.4.2"
   },
   "devDependencies": {
+    "@babel/preset-es2017": "^7.0.0-beta.53",
     "babel-jest": "24.5.0",
     "jest": "24.5.0",
     "metro-react-native-babel-preset": "0.53.1",
